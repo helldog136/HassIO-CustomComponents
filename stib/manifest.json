@@ -1,8 +1,0 @@
-{
-  "domain": "stib-mvib",
-  "name": "STIB/MVIB",
-  "documentation": "https://www.home-assistant.io/components/hue",
-  "dependencies": ["mqtt"],
-  "codeowners": ["@balloob"],
-  "requirements": ["aiohue==1.9.1"]
-}

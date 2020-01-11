@@ -1,6 +1,15 @@
 # Stib 
-Brussels public transport 
+Brussels public transport HassIO integration.
 
+
+
+**WIP** - original from https://github.com/danito/HA-Config
+Will be re-written because openAPI changed.
+
+
+-----
+NOT UP TO DATE DOCUMENTATION
+-------
 ## Install
 copy stib.py to custom_components/sensor/
 
@@ -8,7 +17,7 @@ cunfiguration.yaml:
 
 ```yaml
 sensor:
-  - platform: stib
+  - platform: stib-mvib
     station_ids:
       - 1234
       - 4567

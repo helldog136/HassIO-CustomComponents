@@ -31,7 +31,7 @@ ATTR_DESTINATION = 'Next Destination'
 ATTR_UPCOMING_DESTINATION = 'Upcoming Destination'
 ATTR_MODE = 'Mode'
 ATTR_LINE_ID = 'line'
-ATTR_ATTRIBUTION = 'Data provided by api.stib.be'
+ATTR_ATTRIBUTION = 'Data provided by api.stib-mvib.be'
 
 
 ICON = 'mdi:bus'
@@ -147,7 +147,7 @@ class StibSensor(Entity):
                 self._line_id = line_id
                 self._destination = d[minutes].title()
                 self._upcoming_destination = d[self._upcoming].title()
-                self._name = "stib " + self._stop + " " + self._stop_name + " " + self._mode + line_id
+                self._name = "stib-mvib " + self._stop + " " + self._stop_name + " " + self._mode + line_id
                 state = self._next + " (" + self._destination + ")"
                 if len(t) == 2:
                     state = state + " - " + self._upcoming + " (" + self._upcoming_destination + ")"

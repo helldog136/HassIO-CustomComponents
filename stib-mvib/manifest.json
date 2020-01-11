@@ -1,0 +1,8 @@
+{
+  "domain": "stib-mvib",
+  "name": "STIB/MVIB",
+  "documentation": "https://github.com/helldog136/HassIO-CustomComponents/tree/master/stib",
+  "dependencies": [],
+  "codeowners": ["@helldog136"],
+  "requirements": []
+}
