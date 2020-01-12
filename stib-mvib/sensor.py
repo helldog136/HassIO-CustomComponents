@@ -8,7 +8,7 @@ import logging
 import json
 
 from homeassistant.helpers.entity import Entity
-from homeassistant.const import STATE_UNKNOWN
+from homeassistant.const import STATE_OK
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ DEFAULT_NAME = 'STIB'
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     sensors = []
-    stops_list = set(config.get(CONF_STOPS, []))
+    stops_list = config.get(CONF_STOPS)
     for stop in stops_list:
         sensors.append(StibSensor(stop[CONF_STOP_ID], stop[CONF_DIRECTION], config.get(CONF_API_TOKEN)))
 
@@ -41,7 +41,7 @@ class StibSensor(Entity):
     """A sensor contains information about a specific traject on a specific stib line"""
     def __init__(self, stopId, direction, api_token):
         self._direction = direction
-        self._state = STATE_UNKNOWN
+        self._state = STATE_OK
         self._upcoming = 0
         self._upcoming_destination = direction
         self._stop_id = stopId
@@ -51,7 +51,7 @@ class StibSensor(Entity):
 
     @property
     def name(self):
-        return "STIB info for stop with id " + self._stop_id
+        return "STIB info for stop with id " + str(self._stop_id)
 
     @property
     def state(self):
